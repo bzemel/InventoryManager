@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Layout for the editor -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/editor_activity"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_margin"
+    tools:context=".EditorActivity">
+
+    <!-- Name field -->
+    <EditText
+        android:id="@+id/edit_item_name"
+        style="@style/EditorFieldStyle"
+        android:hint="@string/hint_item_name"
+        android:inputType="textCapWords" />
+
+    <!-- Price field -->
+    <EditText
+        android:id="@+id/edit_item_price"
+        style="@style/EditorFieldStyle"
+        android:hint="@string/hint_item_price"
+        android:inputType="numberDecimal" />
+
+    <!-- Horizontal Linear Layout for Image URL/Image Update Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <!-- Item Image URL field -->
+        <EditText
+            android:id="@+id/edit_item_image_url"
+            style="@style/EditorFieldStyle"
+            android:layout_weight="1"
+            android:hint="@string/hint_item_image_url"
+            android:inputType="textUri" />
+
+        <!-- Button to Update Image to URL -->
+        <Button
+            android:id="@+id/image_update"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:text="Update" />
+
+    </LinearLayout>
+
+    <!-- Supplier URL field -->
+    <EditText
+        android:id="@+id/edit_supplier_phone"
+        style="@style/EditorFieldStyle"
+        android:hint="@string/hint_item_supplier_phone"
+        android:inputType="number" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/minus_button"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="@string/minus" />
+
+        <!-- Quantity field -->
+        <EditText
+            android:id="@+id/edit_item_quantity"
+            style="@style/EditorFieldStyle"
+            android:layout_width="wrap_content"
+            android:hint="@string/hint_item_quantity"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/plus_button"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="@string/plus" />
+
+        <Button
+            android:id="@+id/delete_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_margin"
+            android:text="@string/delete" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/order_button"
+        style="@style/EditorFieldStyle"
+        android:text="@string/order_more" />
+
+    <ImageView
+        android:id="@+id/image_editor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/image_layout_margin" />
+
+</LinearLayout>
