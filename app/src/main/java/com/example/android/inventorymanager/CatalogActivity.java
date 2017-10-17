@@ -5,7 +5,6 @@ import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -102,7 +101,6 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
         values.put(GameEntry.COLUMN_GAME_PRICE, 35.99);
         values.put(GameEntry.COLUMN_GAME_QUANTITY, 5);
         values.put(GameEntry.COLUMN_GAME_IMAGE_URL, "https://images-na.ssl-images-amazon.com/images/I/81SrTgYBDaL._SL1500_.jpg");
-        mDbHelper.updateImage(GameEntry._ID, BitmapFactory.decodeResource(this.getResources(), R.drawable.catan));
         values.put(GameEntry.COLUMN_GAME_SUPPLIER_URL, "5551234567");
 
         // Insert a new row for Catan into the provider using the ContentResolver.
@@ -173,7 +171,6 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
                 GameEntry.COLUMN_GAME_PRICE,
                 GameEntry.COLUMN_GAME_QUANTITY,
                 GameEntry.COLUMN_GAME_IMAGE_URL,
-                GameEntry.COLUMN_GAME_IMAGE_PATH,
                 GameEntry.COLUMN_GAME_SUPPLIER_URL};
 
         return new CursorLoader(this, GameEntry.CONTENT_URI, projection, null, null, null);

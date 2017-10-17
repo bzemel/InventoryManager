@@ -4,8 +4,6 @@ import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
@@ -72,9 +70,6 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
     //Order button
     Button orderButton;
 
-    //Image Update button
-    Button imageUpdate;
-
     //boolean for unsaved change listener
     private Boolean mGameHasChanged = false;
 
@@ -112,7 +107,6 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         plusButton = (Button) findViewById(R.id.plus_button);
         deleteButton = (Button) findViewById(R.id.delete_button);
         orderButton = (Button) findViewById(R.id.order_button);
-        imageUpdate = (Button) findViewById(R.id.image_update);
 
         //Setting OnTouchListeners
         mNameEditText.setOnTouchListener(mTouchListener);
@@ -143,13 +137,6 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
             @Override
             public void onClick(View view) {
                 showDeleteConfirmationDialog();
-            }
-        });
-
-        imageUpdate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                imageUpdate();
             }
         });
 
@@ -262,10 +249,7 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         } else {
             new DownloadImageTask(mGameImage)
                     .execute(imageUrl);
-            Bitmap image = ((BitmapDrawable) mGameImage.getDrawable()).getBitmap();
-            mDbHelper.updateImage(GameEntry._ID, image);
-
-        }
+            }
     }
 
 

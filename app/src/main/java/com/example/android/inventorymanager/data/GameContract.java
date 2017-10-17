@@ -25,7 +25,6 @@ public class GameContract {
         public static final String COLUMN_GAME_PRICE = "price";
         public static final String COLUMN_GAME_QUANTITY = "quantity";
         public static final String COLUMN_GAME_IMAGE_URL = "imageurl";
-        public static final String COLUMN_GAME_IMAGE_PATH = "imagename";
         public static final String COLUMN_GAME_SUPPLIER_URL = "supplierurl";
 
         //Constant for complete URI

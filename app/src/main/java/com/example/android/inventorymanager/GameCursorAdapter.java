@@ -54,7 +54,6 @@ public class GameCursorAdapter extends CursorAdapter {
         final int quantity = cursor.getInt(cursor.getColumnIndexOrThrow(GameContract.GameEntry.COLUMN_GAME_QUANTITY));
         double price = cursor.getDouble(cursor.getColumnIndexOrThrow(GameContract.GameEntry.COLUMN_GAME_PRICE));
         String imageURL = cursor.getString(cursor.getColumnIndexOrThrow(GameContract.GameEntry.COLUMN_GAME_IMAGE_URL));
-        String imagePath = cursor.getString(cursor.getColumnIndexOrThrow(GameContract.GameEntry.COLUMN_GAME_IMAGE_PATH));
 
         final long id = cursor.getLong(getCursor().getColumnIndex(GameContract.GameEntry._ID));
 
@@ -67,7 +66,8 @@ public class GameCursorAdapter extends CursorAdapter {
         gameName.setText(name);
         gameQuantity.setText(quantity + "");
         gamePrice.setText(doubleToPrice(price, '$'));
-        gameImage.setImageBitmap(dbHelper.getImage(GameContract.GameEntry._ID));
+        new DownloadImageTask(gameImage)
+                .execute(imageURL);
 
         saleButton.setOnClickListener(new View.OnClickListener() {
             @Override
