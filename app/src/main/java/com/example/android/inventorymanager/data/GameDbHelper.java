@@ -10,6 +10,9 @@ import com.example.android.inventorymanager.data.GameContract.GameEntry;
 
 /**
  * Created by benze on 9/22/2017.
+ *
+ * Icon made by Freepik from www.flaticon.com
+ *
  */
 
 public class GameDbHelper extends SQLiteOpenHelper {
